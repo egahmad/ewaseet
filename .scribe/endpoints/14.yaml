@@ -1,0 +1,70 @@
+name: Settings
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/settings
+    metadata:
+      title: 'List settings'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"app":{"app_name":"LaraClassifier","slogan":"Classified Ads Web Application","logo":"app\/default\/logo.png","favicon":"app\/default\/ico\/favicon.png","email":"contact@demosite.com","phone_number":"+15656566764","show_languages_flags":"1","show_countries_charts":"1","latest_entries_limit":"10","logo_dark":"app\/default\/backend\/logo_dark.png","logo_light":"app\/default\/backend\/logo_light.png","login_bg_image":"app\/default\/backend\/login_bg_image.jpg","name":"LaraClassifier","date_format":"YYYY-MM-DD","datetime_format":"YYYY-MM-DD HH:mm","vector_charts_type":"morris_bar","general_settings_as_submenu_in_sidebar":"1"},"style":{"skin":"blueIzis","page_width":"1200","header_sticky":"1","header_height":"60","header_bottom_border_width":"1px","header_bottom_border_color":"#E8E8E8","logo_width":"216","logo_height":"40","logo_aspect_ratio":"1","login_bg_image":"app\/default\/backend\/login_bg_image.jpg","admin_logo_bg":"skin3","admin_navbar_bg":"skin6","admin_sidebar_type":"full","admin_sidebar_bg":"skin5","admin_sidebar_position":"1","admin_header_position":"1"},"list":{"display_browse_listings_link":"1","display_mode":"make-grid","grid_view_cols":"4","items_per_page":"16","left_sidebar":"1","show_cats_in_top":"1","show_listings_tags":"1","fake_locations_results":"1","elapsed_time_from_now":"1","cities_extended_searches":"1","search_distance_max":"500","search_distance_default":"50","search_distance_interval":"100","max_price":"10000","price_slider_step":"50","show_category_icon":"7","distance_calculation_formula":"ST_Distance_Sphere"},"single":{"publication_form_type":"1","picture_mandatory":"1","pictures_limit":"6","tags_limit":"15","guests_can_post_listing":"1","pricing_page_enabled":"2","show_listing_types":"1","enable_post_uniqueness":"1","wysiwyg_editor":"tinymce","remove_url_before":"1","remove_url_after":"1","remove_email_after":"1","remove_phone_after":"1","hide_phone_number":"1","show_security_tips":"1","elapsed_time_from_now":"1","guests_can_contact_authors":"1","pictures_slider":"swiper-vertical","similar_listings":"1","show_listing_on_googlemap":"1","activation_facebook_comments":"1","title_min_length":"2","title_max_length":"150","description_min_length":"5","description_max_length":"6000","tags_min_length":"2","tags_max_length":"30","similar_listings_limit":"12","guests_can_post_listings":"1"},"mail":{"driver":"smtp","sendmail_path":"\/usr\/sbin\/sendmail -bs","sendmail_email_sender":"noreply@laraclassifier.com","smtp_host":"127.0.0.1","smtp_port":"1025","smtp_email_sender":"noreply@laraclassifier.com","mailgun_email_sender":"noreply@laraclassifier.com","postmark_email_sender":"noreply@laraclassifier.com","ses_email_sender":"noreply@laraclassifier.com","mandrill_email_sender":"noreply@laraclassifier.com","sparkpost_email_sender":"noreply@laraclassifier.com","email_verification":"1"},"sms":{"vonage_key":"e3b3fe87","vonage_secret":"YddA5hLbA8oByfhu","vonage_from":"+22997889345","twilio_auth_token":"52e7399291dadcac52926557d35df12d","twilio_account_sid":"ACf827d0c144c8a75dac83bed61238567d","twilio_from":"+15622100103"},"upload":{"file_types":"pdf,doc,docx,word,rtf,rtx,ppt,pptx,odt,odp,wps,jpeg,jpg,bmp,png","max_file_size":"1500","image_types":"jpg,jpeg,gif,png","image_quality":"90","max_image_size":"1500","img_resize_width":"1500","img_resize_height":"1500","img_resize_ratio":"1","img_resize_logo_width":"250","img_resize_logo_height":"50","img_resize_logo_ratio":"1","img_resize_cat_width":"70","img_resize_cat_height":"70","img_resize_cat_ratio":"1","img_resize_small_resize_type":"2","img_resize_small_width":"120","img_resize_small_height":"90","img_resize_small_ratio":"1","img_resize_small_position":"center","img_resize_small_bg_color":"FFFFFF","img_resize_medium_resize_type":"1","img_resize_medium_width":"320","img_resize_medium_height":"240","img_resize_medium_ratio":"1","img_resize_medium_position":"center","img_resize_medium_bg_color":"FFFFFF","img_resize_big_width":"816","img_resize_big_height":"460","img_resize_big_ratio":"1","img_resize_big_upsize":"1","img_resize_big_position":"center","img_resize_big_bg_color":"FFFFFF"},"geo_location":{"default_country_code":"US","show_country_flag":"1","driver":"ipapi"},"security":{"csrf_protection":"1","login_open_in_modal":"1","login_max_attempts":"5","login_decay_minutes":"15","captcha_delay":"1500","recaptcha_version":"v2","recaptcha_v2_site_key":"6LepkyITAAAAABcNEMzv-aT6WYAIiBH5ptr4Lc1I","recaptcha_v2_secret_key":"6LepkyITAAAAAOgRvmTuqwmEw-X-6ClQKic2GmET","recaptcha_v3_site_key":"6LfshpMUAAAAAEwj0lPqGtkK9yVZBTlLhXYTML2U","recaptcha_v3_secret_key":"6LfshpMUAAAAAE6rMAhoaL3fi8-vcwgK_oKObS30","password_min_length":"6","password_max_length":"60","email_validator_rfc":"1"},"social_auth":{"facebook_client_id":"185117605222222","facebook_client_secret":"f6e8c86ea27d105db66fb7dcb869ea1a","linkedin_client_id":"78aga5c5at9ike","linkedin_client_secret":"lBzSFPiAHFu0G5by","twitter_client_id":"6hleLapRANZYQMtx4zgByMTZW","twitter_client_secret":"0w11TRAxN6uhOUSojs89Gaao0m25faYE3tRrDxotuWIrI27KrT","google_client_id":"592039798069-79n9ii3d92843qubmrvgn88gjjpr8q4b.apps.googleusercontent.com","google_client_secret":"jjqFabAHbGTz-73-BQjXQTof"},"optimization":{"cache_driver":"file","cache_expiration":"86400","memcached_servers_1_host":"127.0.0.1","memcached_servers_1_port":"11211","redis_client":"predis","redis_cluster":"predis","redis_host":"127.0.0.1","redis_port":"6379"},"seo":{"google_site_verification":"0Phxx3nIjQwv96P7ysyMT18m1ePCzUJ7TskbZEyj_Ek","robots_txt":"User-agent: *\nDisallow: \/","no_index_all":"1","listing_permalink":"{slug}\/{hashableId}","listing_hashed_id_enabled":"1","listing_hashed_id_seo_redirection":"1"},"other":{"show_tips_messages":"1","googlemaps_key":"AIzaSyD31p7CzP8EQHYBcquZtPm_el66o1xB0HE","simditor_wysiwyg":"1","cookie_expiration":"86400","wysiwyg_editor":"tinymce"},"cron":{"unactivated_listings_expiration":"30","activated_listings_expiration":"30","archived_listings_expiration":"7","manually_archived_listings_expiration":"90"},"footer":{"hide_payment_plugins_logos":"1"},"backup":{"disable_notifications":"1","keep_all_backups_for_days":"7","keep_daily_backups_for_days":"16","keep_weekly_backups_for_weeks":"8","keep_monthly_backups_for_months":"4","keep_yearly_backups_for_years":"2","maximum_storage_in_megabytes":"5000"},"watermark":{"watermark":"app\/logo\/watermark-627a3cbf10ad6.png","width":"150","height":"150","percentage_reduction":"80","opacity":"50","position":"bottom-right","position_x":"20","position_y":"20"}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/settings/{key}'
+    metadata:
+      title: 'Get setting'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      key:
+        name: key
+        description: 'The setting''s key.'
+        required: true
+        example: app
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"app_name":"LaraClassifier","slogan":"Classified Ads Web Application","logo":"app\/default\/logo.png","favicon":"app\/default\/ico\/favicon.png","email":"contact@demosite.com","phone_number":"+15656566764","show_languages_flags":"1","show_countries_charts":"1","latest_entries_limit":"10","logo_dark":"app\/default\/backend\/logo_dark.png","logo_light":"app\/default\/backend\/logo_light.png","login_bg_image":"app\/default\/backend\/login_bg_image.jpg","name":"LaraClassifier","date_format":"YYYY-MM-DD","datetime_format":"YYYY-MM-DD HH:mm","vector_charts_type":"morris_bar","general_settings_as_submenu_in_sidebar":"1"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          vary: Origin
+        description: null
+    responseFields: []
