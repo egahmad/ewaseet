@@ -1,18 +1,27 @@
 {
     "version": "https://jsonfeed.org/version/1.1",
     "title": "{{ $meta['title'] }}",
+@if(!empty($meta['description']))
+    "description": "{{ $meta['description'] }}",
+@endif
     "home_page_url": "{{ config('app.url') }}",
     "feed_url": "{{ url($meta['link']) }}",
     "language": "{{ $meta['language'] }}",
 @if(!empty($meta['image']))
     "icon": "{{ $meta['image'] }}",
 @endif
+    "authors": [@foreach($items->unique('authorName') as $item){
+            "name": "{{ $item->authorName }}"
+        }@if(! $loop->last),@endif
+@endforeach
+
+    ],
     "items": [@foreach($items as $item){
             "id": "{{ url($item->id) }}",
             "title": "{{ $item->title }}",
             "url": "{{ url($item->link) }}",
-            "content_html": "{!! str_replace('"', '\\"', $item->summary) !!}",
-            "summary": "{!! str_replace('"', '\\"', $item->summary) !!}",
+            "content_html": {!! json_encode($item->summary) !!},
+            "summary": {!! json_encode($item->summary) !!},
             "date_published": "{{ $item->timestamp() }}",
             "date_modified": "{{ $item->timestamp() }}",
             "authors": [{ "name": "{{ $item->authorName }}" }],
@@ -29,7 +38,7 @@
             ],
 @endif
             "tags": [ {!! implode(',', array_map(fn($c) => '"'.$c.'"', $item->category)) !!} ]
-        }@if($item !== $items->last()),
+        }@if(! $loop->last),
 @endif
         @endforeach
 
