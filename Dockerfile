@@ -1,6 +1,6 @@
 ########################### Staging Stage Start from here
 ########## Set the base image for subsequent instructions
-FROM egahmad/docker-php-laravel:7.4-apache-development as builder
+FROM egahmad/docker-php-laravel:8.1-apache-development as builder
 
 RUN apt-get -y update --fix-missing --no-install-recommends
 
@@ -40,7 +40,7 @@ EXPOSE 6001
 # Launch Apache
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
 
-FROM egahmad/php7.4-laravel-apache-production as staging
+FROM egahmad/php8.1-laravel-apache-production as staging
 
 RUN apt-get -y update --fix-missing --no-install-recommends
 
