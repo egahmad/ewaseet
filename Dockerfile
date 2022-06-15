@@ -1,84 +1,91 @@
 ########################### Staging Stage Start from here
 ########## Set the base image for subsequent instructions
-FROM egahmad/docker-php-laravel:8.1-apache-development as builder
+FROM bitnami/php-fpm:8.1 as development
 
-RUN apt-get -y update --fix-missing --no-install-recommends
+COPY .env.example .env
+#RUN sed -ri -e "s!##TNT_HOST##!${TNT_HOST}!g" .env
 
-#Seupp laravel public folder
-RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+WORKDIR /app
+COPY --chown=www-data:www-data . /app
 
-WORKDIR /var/www/html/
-COPY . /var/www/html
-
-RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/app public
-
-RUN chmod -R 777 storage public
-
-# Copy scripts and entrypoint
-COPY .cicd/sh/entrypoint /entrypoint
-# Set execute flag for entrypoint
-RUN chmod +x /entrypoint
-
-
-FROM builder as development
-
-ARG RUN_ID
-ENV RUN_ID=$RUN_ID
-
-WORKDIR /var/www/html/
-
-COPY .env.development .env
-RUN sed -ri -e "s!##RUN_ID##!D-01-${RUN_ID}!g" .env
-
-COPY .cicd/php/php.ini-development /usr/local/etc/php/php.ini
-
-EXPOSE 80
-EXPOSE 443
-EXPOSE 6001
-
-# Launch Apache
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
-
-FROM egahmad/php8.1-laravel-apache-production as staging
-
-RUN apt-get -y update --fix-missing --no-install-recommends
-
-#Seupp laravel public folder
-RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
-WORKDIR /var/www/html/
-COPY . /var/www/html
+# @:TODO remove all .cicd files
 
 RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/app public
 
 RUN chmod -R 777 storage public
 
+# Expose Nginx
+RUN apt-get update -y && apt-get install -y nginx nano
+
+ADD .cicd/nginx/nginx-site.conf /etc/nginx/sites-enabled/default
+ADD .cicd/scripts/entrypoint.sh /etc/entrypoint.sh
+RUN chmod +x /etc/entrypoint.sh
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+#RUN apt-get install -y cron
+#ADD .cicd/schedule/crontab /etc/cron.d/cron
+#RUN chmod 0644 /etc/cron.d/cron
+
+#RUN crontab /etc/cron.d/cron
+
+#RUN touch /var/log/cron.log
+
+
+#RUN touch /var/log/worker.log
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh", "/etc/entrypoint.sh"]
+
+########################### Production Stage Start from here
+########## Set the base image for subsequent instructions
+FROM bitnami/php-fpm:8.1 as production
+
+#RUN git config --global user.name "${GITHUB_USER}"
+#RUN git config --global user.password "${GITHUB_PASSWORD}"
+
+WORKDIR /app/
+COPY --chown=www-data:www-data . /app
+
+# @:TODO remove all .cicd files
+
+RUN mkdir -p storage/framework/cache/data
+RUN mkdir -p storage/framework/sessions
+RUN mkdir -p storage/framework/testing
+RUN mkdir -p storage/framework/views
+RUN mkdir -p storage/app
+
+RUN useradd -G www-data,root -u 1000 -d /home/devuser devuser
+RUN chmod -R 777 /app/storage
+RUN chmod -R 777 /app/public
+RUN chmod -R 777 /app/resources/lang
+
 # Copy scripts and entrypoint
-COPY .cicd/sh/entrypoint /entrypoint
+#COPY .cicd/scripts/entrypoint /entrypoint
+
+# Copy php.ini
+#COPY .cicd/data/php/php.ini-development /usr/local/etc/php/php.ini
+
 # Set execute flag for entrypoint
-RUN chmod +x /entrypoint
+#RUN chmod +x /entrypoint
 
-WORKDIR /var/www/html/
+# Expose Apache
+RUN apt-get update -y \
+    && apt-get install -y nginx nano
 
-COPY .env.production .env
-COPY .cicd/php/php.ini-production /usr/local/etc/php/php.ini
+COPY .cicd/nginx/nginx-site.conf /etc/nginx/sites-enabled/default
+COPY .cicd/scripts/entrypoint.sh /etc/entrypoint.sh
 
-EXPOSE 80
-EXPOSE 443
-EXPOSE 6001
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Launch Apache
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+RUN chmod u+x /etc/entrypoint.sh
 
-FROM staging as production
+WORKDIR /app
+EXPOSE 8080
 
-WORKDIR /var/www/html/
-
-EXPOSE 80
-EXPOSE 443
-EXPOSE 6001
-
-# Launch Apache
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh","/etc/entrypoint.sh"]
