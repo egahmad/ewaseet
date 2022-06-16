@@ -35,3 +35,4 @@ Disallow: /auth/twitter
 Disallow: /auth/google
 
 
+Sitemap: http://ewaseet.local/eg/sitemaps.xml
