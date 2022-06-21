@@ -61,7 +61,7 @@ body {
 {
     background-color: #ff4035 !important;
     border-color: #ff4035 !important;
-    color: white;
+    color: white !important;
     border-radius: 0;
     padding: 10px 15px;
 }
