@@ -241,12 +241,13 @@
 					@endif
 					
 					<div class="copy-info text-center mb-md-0{{ $mbCopy }}{{ $mtCopy }}">
-						© {{ date('Y') }} {{ config('settings.app.name') }}. {{ t('all_rights_reserved') }}.
+						©  {{ t('all_rights_reserved') }}.{{ date('Y') }} {{ config('settings.app.name') }}.
 						@if (!config('settings.footer.hide_powered_by'))
 							@if (config('settings.footer.powered_by_info'))
-								{{ t('Powered by') }} {!! config('settings.footer.powered_by_info') !!}
+								 {!! config('settings.footer.powered_by_info') !!}
 							@else
-								{{ t('Powered by') }} <a href="https://laraclassifier.com" title="LaraClassifier">LaraClassifier</a>.
+								
+								<!-- <a href="https://laraclassifier.com" title="LaraClassifier">LaraClassifier</a> -->
 							@endif
 						@endif
 					</div>
