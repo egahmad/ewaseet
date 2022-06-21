@@ -15,12 +15,12 @@
 /* Your custom CSS here... */
 
 *{
-    font-family: 'SF Pro AR Display', sans-serif;
+    font-family: 'SF Pro AR Display', sans-serif !important;
 }
 
 body {
     background-color: whitesmoke;
-    font-family: 'SF Pro AR Display', sans-serif;
+    font-family: 'SF Pro AR Display', sans-serif !important;
 }
 
 .intro {
@@ -49,4 +49,39 @@ body {
 }
 .footer-content {
     background: #202125;
+}
+.navbar.navbar-site {
+    background-color: white !important;
+}
+.navbar.navbar-site ul.navbar-nav>li.postadd.nav-item {
+   
+    min-width: 140px;
+}
+.navbar.navbar-site ul.navbar-nav>li.postadd.nav-item a
+{
+    background-color: #ff4035 !important;
+    border-color: #ff4035 !important;
+    color: white;
+    border-radius: 0;
+    padding: 10px 15px;
+}
+.skin .btn-listing {
+    background-image: linear-gradient(to bottom, #ff4035 0%, #ff4035 100%) !important;
+}
+.skin .btn-listing:hover
+{
+    background-image: linear-gradient(to bottom, #fc382e 0%, #fc382e 100%) !important;
+}
+
+.skin .search-row .search-col:first-child .search-col-inner, .skin .search-row .search-col .search-col-inner, .skin .search-row .search-col .search-btn-border {
+    border: 1px solid #eaebf7;
+}
+#homepage .search-row .search-col .btn {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+#homepage .search-row .search-col:first-child .search-col-inner {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
 }
