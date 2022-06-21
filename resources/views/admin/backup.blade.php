@@ -5,7 +5,6 @@
     <link href="{{ asset('assets/plugins/ladda/ladda-themeless.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
-
 @section('header')
 	<div class="row page-titles">
 		<div class="col-md-6 col-12 align-self-center">
