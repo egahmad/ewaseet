@@ -27,7 +27,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 			<div class="navbar-identity p-sm-0">
 				{{-- Logo --}}
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
-					<img src="{{ imgUrl(config('settings.app.logo'), 'logo') }}"
+					<img src="{{ asset('images\ewaseet-logo.png') }}"
 						 alt="{{ strtolower(config('settings.app.name')) }}" class="main-logo" data-bs-placement="bottom"
 						 data-bs-toggle="tooltip"
 						 title="{!! isset($logoLabel) ? $logoLabel : '' !!}"/>
