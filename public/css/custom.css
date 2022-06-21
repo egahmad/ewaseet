@@ -15,11 +15,12 @@
 /* Your custom CSS here... */
 
 *{
-    font-family: "Times New Roman", Times, serif
+    font-family: 'SF Pro AR Display', sans-serif;
 }
 
 body {
     background-color: whitesmoke;
+    font-family: 'SF Pro AR Display', sans-serif;
 }
 
 .intro {
