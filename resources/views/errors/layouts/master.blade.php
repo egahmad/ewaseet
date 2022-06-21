@@ -35,7 +35,6 @@
 		<link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
 	@endif
 	<link href="{{ url()->asset('common/css/style.css') . getPictureVersion() }}" rel="stylesheet">
-	<link rel="stylesheet" href="{{url('fonts/SFProARDisplay/stylesheet.css'}}">
 	<link href="{{ url('css/custom.css') . getPictureVersion() }}" rel="stylesheet">
 	
 	@yield('after_styles')
