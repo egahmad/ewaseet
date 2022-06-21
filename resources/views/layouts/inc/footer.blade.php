@@ -241,7 +241,7 @@
 					@endif
 					
 					<div class="copy-info text-center mb-md-0{{ $mbCopy }}{{ $mtCopy }}">
-						©  {{ t('all_rights_reserved') }}.{{ date('Y') }} {{ config('settings.app.name') }}.
+						©  {{ t('all_rights_reserved') }} {{ config('settings.app.name') }}.
 						@if (!config('settings.footer.hide_powered_by'))
 							@if (config('settings.footer.powered_by_info'))
 								 {!! config('settings.footer.powered_by_info') !!}
