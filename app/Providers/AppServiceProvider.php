@@ -30,9 +30,9 @@ use Laravel\Sanctum\Sanctum;
 class AppServiceProvider extends ServiceProvider
 {
 	use AclSystemTrait, ConfigTrait, SymlinkTrait;
-	
+
 	private int $cacheExpiration = 86400; // Cache for 1 day (60 * 60 * 24)
-	
+
 	/**
 	 * Register any application services.
 	 *
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
 	{
 		//
 	}
-	
+
 	/**
 	 * Bootstrap any application services.
 	 *
@@ -51,41 +51,41 @@ class AppServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		Paginator::useBootstrap();
-		
+
 		try {
 			// Specified key was too long error
 			Schema::defaultStringLength(191);
 		} catch (\Throwable $e) {
 		}
-		
+
 		try {
 			// Setup Laravel Sanctum
 			Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
 		} catch (\Throwable $e) {
 		}
-		
+
 		// Setup Storage Symlink
-		$this->setupStorageSymlink();
+//		$this->setupStorageSymlink();
 		
 		// Setup ACL system
 		$this->setupAclSystem();
-		
+
 		// Setup Https
 		$this->setupHttps();
-		
+
 		// Setup Configs
 		$this->setupConfigs();
-		
+
 		// Date default encoding & translation
 		// The translation option is overwritten when applying the front-end settings
 		if (config('settings.app.date_force_utf8')) {
 			Carbon::setUtf8(true);
 		}
-		
+
 		// Set locale for PHP
 		SystemLocale::setLocale(config('appLang.locale', 'en_US'));
 	}
-	
+
 	/**
 	 * Setup Https
 	 */
