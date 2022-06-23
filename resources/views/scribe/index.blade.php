@@ -47,13 +47,13 @@
 </a>
 <div class="tocify-wrapper">
             <img src="../storage/app/default/logo-api.png" alt="logo" class="logo" style="padding-top: 10px;" width="230px"/>
-    
+
             <div class="lang-selector">
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                                             <button type="button" class="lang-button" data-language-name="php">php</button>
                     </div>
-    
+
     <div class="search">
         <input type="text" class="search" id="input-search" placeholder="Search">
     </div>
@@ -63,15 +63,15 @@
                     <li class="tocify-item level-1" data-unique="introduction">
                         <a href="#introduction">Introduction</a>
                     </li>
-                                            
+
                                                                     </ul>
                                                 <ul id="tocify-header-1" class="tocify-header">
                     <li class="tocify-item level-1" data-unique="authenticating-requests">
                         <a href="#authenticating-requests">Authenticating requests</a>
                     </li>
-                                            
+
                                                 </ul>
-                    
+
                     <ul id="tocify-header-2" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="authentication">
                     <a href="#authentication">Authentication</a>
@@ -426,8 +426,8 @@
                     </li>
                                                     </ul>
                             </ul>
-        
-                        
+
+
             </div>
 
             <ul class="toc-footer" id="toc-footer">
@@ -461,7 +461,7 @@ need to be added in the header of all the API requests with <code>X-AppApiToken<
 
         <h1 id="authentication">Authentication</h1>
 
-    
+
 
             <h2 id="authentication-POSTapi-auth-login">Log in</h2>
 
@@ -1179,7 +1179,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="captcha">Captcha</h1>
 
-    
+
 
             <h2 id="captcha-GETapi-captcha">Get CAPTCHA</h2>
 
@@ -1309,7 +1309,7 @@ vary: Origin
 
         <h1 id="categories">Categories</h1>
 
-    
+
 
             <h2 id="categories-GETapi-categories">List categories</h2>
 
@@ -1913,7 +1913,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="contact">Contact</h1>
 
-    
+
 
             <h2 id="contact-POSTapi-contact">Send Form</h2>
 
@@ -2295,7 +2295,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="countries">Countries</h1>
 
-    
+
 
             <h2 id="countries-GETapi-countries">List countries</h2>
 
@@ -4145,7 +4145,7 @@ vary: Origin
 
         <h1 id="home">Home</h1>
 
-    
+
 
             <h2 id="home-GETapi-homeSections">List sections</h2>
 
@@ -8135,7 +8135,7 @@ vary: Origin
 
         <h1 id="listings">Listings</h1>
 
-    
+
 
             <h2 id="listings-GETapi-postTypes">List listing types</h2>
 
@@ -13566,7 +13566,7 @@ vary: Origin
 
         <h1 id="packages">Packages</h1>
 
-    
+
 
             <h2 id="packages-GETapi-packages">List packages</h2>
 
@@ -14011,7 +14011,7 @@ vary: Origin
 
         <h1 id="pages">Pages</h1>
 
-    
+
 
             <h2 id="pages-GETapi-pages">List pages</h2>
 
@@ -14432,7 +14432,7 @@ vary: Origin
 
         <h1 id="payment-methods">Payment Methods</h1>
 
-    
+
 
             <h2 id="payment-methods-GETapi-paymentMethods">List payment methods</h2>
 
@@ -14743,7 +14743,7 @@ vary: Origin
 
         <h1 id="payments">Payments</h1>
 
-    
+
 
             <h2 id="payments-GETapi-payments">List payments</h2>
 
@@ -15290,7 +15290,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="pictures">Pictures</h1>
 
-    
+
 
             <h2 id="pictures-GETapi-pictures--id-">Get picture</h2>
 
@@ -16208,7 +16208,7 @@ vary: Origin
 
         <h1 id="saved-posts">Saved Posts</h1>
 
-    
+
 
             <h2 id="saved-posts-POSTapi-savedPosts">Store/Delete saved listing</h2>
 
@@ -16666,7 +16666,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="saved-searches">Saved Searches</h1>
 
-    
+
 
             <h2 id="saved-searches-POSTapi-savedSearches">Store/Delete saved search</h2>
 
@@ -17125,7 +17125,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
         <h1 id="settings">Settings</h1>
 
-    
+
 
             <h2 id="settings-GETapi-settings">List settings</h2>
 
@@ -17631,7 +17631,7 @@ vary: Origin
 
         <h1 id="social-auth">Social Auth</h1>
 
-    
+
 
             <h2 id="social-auth-GETapi-auth--provider-">Get target URL</h2>
 
@@ -17901,7 +17901,7 @@ vary: Origin
 
         <h1 id="threads">Threads</h1>
 
-    
+
 
             <h2 id="threads-POSTapi-threads">Store thread</h2>
 
@@ -19282,7 +19282,7 @@ vary: Origin
 
         <h1 id="users">Users</h1>
 
-    
+
 
             <h2 id="users-GETapi-genders">List genders</h2>
 
@@ -21612,9 +21612,9 @@ vary: Origin
             </p>
                 </form>
 
-    
 
-        
+
+
     </div>
     <div class="dark-box">
                     <div class="lang-selector">
