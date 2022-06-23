@@ -90,7 +90,6 @@ body {
 .skin .search-row .search-col:first-child .search-col-inner, .skin .search-row .search-col .search-col-inner, .skin .search-row .search-col .search-btn-border {
     border: 1px solid #eaebf7;
 }
-
 #homepage .search-row .search-col .btn {
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
