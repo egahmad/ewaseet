@@ -66,7 +66,7 @@ class AppServiceProvider extends ServiceProvider
 
 		// Setup Storage Symlink
 //		$this->setupStorageSymlink();
-		
+        
 		// Setup ACL system
 		$this->setupAclSystem();
 
