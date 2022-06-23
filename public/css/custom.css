@@ -15,12 +15,12 @@
 /* Your custom CSS here... */
 
 *{
-    font-family: 'SF Pro AR Display', sans-serif !important;
+    font-family: Cairo,sans-serif !important;
 }
 
 body {
     background-color: whitesmoke;
-    font-family: 'SF Pro AR Display', sans-serif !important;
+    font-family: Cairo,sans-serif !important;
 }
 
 .intro {
@@ -59,27 +59,27 @@ body {
 }
 .navbar.navbar-site ul.navbar-nav>li.postadd.nav-item a
 {
-    background-color: #ff4035 !important;
-    border-color: #ff4035 !important;
+    background-color: #ff4034 !important;
+    border-color: #ff4034 !important;
     color: white !important;
     border-radius: 0;
     padding: 10px 15px;
 }
 .skin .btn-listing {
-    background-image: linear-gradient(to bottom, #ff4035 0%, #ff4035 100%) !important;
+    background-image: linear-gradient(to bottom, #ff4034 0%, #ff4034 100%) !important;
 }
 .skin .btn-listing:hover
 {
     background-image: linear-gradient(to bottom, #fc382e 0%, #fc382e 100%) !important;
 }
 .skin .bg-primary {
-    background-color: #ff4035 !important;
+    background-color: #ff4034 !important;
 }
 .skin .btn-primary.btn-gradient
 {
-    background-color: #ff4035;
-    border-color: #ff4035;
-    background: linear-gradient(158deg, #ff4035 44%, #ff4035 85%);
+    background-color: #ff4034;
+    border-color: #ff4034;
+    background: linear-gradient(158deg, #ff4034 44%, #ff4034 85%);
 }
 .skin .btn-primary.btn-gradient:hover
 {
@@ -99,4 +99,13 @@ body {
 #homepage .search-row .search-col:first-child .search-col-inner {
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
+}
+.skin .footer-nav li a:not(.btn):hover, .skin .footer-nav li a:not(.btn):focus {
+    color: #fc382e !important;
+    opacity: 1;
+}
+.box-title h2
+{
+    font-size: 25px;
+    display: block;
 }
