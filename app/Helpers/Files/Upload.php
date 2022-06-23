@@ -39,50 +39,50 @@ class Upload
 		if (empty($file)) {
 			return null;
 		}
-		
+
 		// Case #1: No file is uploaded
 		if (!$file instanceof UploadedFile) {
 			if (!is_string($file)) {
 				return null;
 			}
-			
+
 			if (str_contains($file, $destPath) && !str_starts_with($file, $destPath)) {
 				$file = $destPath . last(explode($destPath, $file));
 			}
-			
+
 			if (str_starts_with($file, url('storage'))) {
 				$file = ltrim(str_replace(url('storage'), '', $file), '/');
 			}
-			
+
 			// Never save in DB the default fallback picture path
 			if (str_contains($file, config('larapen.core.picture.default'))) {
 				$file = null;
 			}
-			
+
 			return $file;
 		}
-		
+
 		# Case #2: Upload the file
 		$disk = StorageDisk::getDisk();
-		
+
 		try {
 			// Init. Intervention
 			$image = Image::make($file);
-			
+
 			// Case #2: File is uploaded
 			// Get file extension
 			$extension = $file->getClientOriginalExtension();
 			if (empty($extension)) {
 				$extension = 'jpg';
 			}
-			
+
 			// Image quality
 			$imageQuality = config('settings.upload.image_quality', 90);
-			
+
 			// Param(s)
 			if (is_string($param) || empty($param)) {
 				$type = (!empty($type)) ? $type . '_' : '';
-				
+
 				$width = (int)config('settings.upload.img_resize_' . $type . 'width', 1000);
 				$height = (int)config('settings.upload.img_resize_' . $type . 'height', 1000);
 				$ratio = config('settings.upload.img_resize_' . $type . 'ratio', '1');
@@ -96,7 +96,7 @@ class Upload
 				$upSize = $param['upsize'] ?? '0';
 				$prefix = $param['filename'] ?? null;
 			}
-			
+
 			// Generate a filename
 			if (!empty($prefix)) {
 				$filename = uniqid($prefix);
@@ -104,12 +104,12 @@ class Upload
 				$filename = md5($file->getClientOriginalName() . random_int(1, 9999) . time());
 			}
 			$filename = $filename . '.' . $extension;
-			
+
 			// Fix the Image Orientation
 			if (exifExtIsEnabled()) {
 				$image = $image->orientate();
 			}
-			
+
 			// If the original dimensions are higher than the resize dimensions
 			// OR the 'upsize' option is enable, then resize the image
 			if ($image->width() > $width || $image->height() > $height || $upSize == '1') {
@@ -123,10 +123,10 @@ class Upload
 					}
 				});
 			}
-			
+
 			// Encode the Image!
 			$image = $image->encode($extension, $imageQuality);
-			
+
 			// Is it with Watermark?
 			if ($withWatermark) {
 				// Check and load Watermark plugin
@@ -138,20 +138,21 @@ class Upload
 					}
 				}
 			}
-			
+
 			// Get file path
 			$filePath = $destPath . '/' . $filename;
-			
+
 			// Store the image on disk
-			$disk->put($filePath, $image->stream()->__toString());
-			
+            $disk->put($filePath, $image->stream()->__toString());
+//            $file1Path = $disk->put($filePath, $file);
+
 			// Save this path to the database
 			return $filePath;
 		} catch (\Throwable $e) {
 			return self::showError($e);
 		}
 	}
-	
+
 	/**
 	 * @param string|null $destPath
 	 * @param $file
@@ -163,43 +164,43 @@ class Upload
 		if (empty($file)) {
 			return null;
 		}
-		
+
 		if (!$file instanceof UploadedFile) {
 			if (!is_string($file)) {
 				return null;
 			}
-			
+
 			if (str_contains($file, $destPath) && !str_starts_with($file, $destPath)) {
 				$file = $destPath . last(explode($destPath, $file));
 			}
-			
+
 			if (str_starts_with($file, url('storage'))) {
 				$file = ltrim(str_replace(url('storage'), '', $file), '/');
 			}
-			
+
 			return $file;
 		}
-		
+
 		$disk = StorageDisk::getDisk($diskName);
-		
+
 		try {
 			// Generate a filename
 			$filename = md5($file->getClientOriginalName() . random_int(1, 9999) . time());
 			$filename = $filename . '.' . $file->getClientOriginalExtension();
-			
+
 			// Get filepath
 			$filePath = $destPath . '/' . $filename;
-			
+
 			// Store the file on disk
 			$disk->put($filePath, File::get($file->getrealpath()));
-			
+
 			// Return the path (to the database later)
 			return $filePath;
 		} catch (\Throwable $e) {
 			return self::showError($e);
 		}
 	}
-	
+
 	/**
 	 * Create an UploadedFile object from base64 file content
 	 *
@@ -216,34 +217,34 @@ class Upload
 		) {
 			return false;
 		}
-		
+
 		// Get file extension
 		$matches = [];
 		preg_match('#data:image/([^;]+);base64#', $base64File, $matches);
 		$extension = (isset($matches[1]) && !empty($matches[1])) ? $matches[1] : 'png';
-		
+
 		// Get file data base64 string
 		// $fileData = preg_replace('#^data:image/\w+;base64,#i', '', $base64File);
 		$fileData = last(explode(',', $base64File));
-		
+
 		// Decode the base64 file
 		$fileData = base64_decode($fileData);
-		
+
 		// Save it to temporary dir first
 		$tmpFilePath = sys_get_temp_dir() . '/' . Str::uuid()->toString();
 		file_put_contents($tmpFilePath, $fileData);
-		
+
 		// This just to help us get file info
 		$tmpFile = new HttpFile($tmpFilePath);
-		
+
 		$path = $tmpFile->getPathname();
 		$originalName = $tmpFile->getFilename() . '.' . $extension;
 		$mimeType = $tmpFile->getMimeType();
 		$error = null;
-		
+
 		return new UploadedFile($path, $originalName, $mimeType, $error, $test);
 	}
-	
+
 	/**
 	 * Create an UploadedFile object from file's full path
 	 *
@@ -256,17 +257,17 @@ class Upload
 		if (empty($path) || !Storage::exists($path)) {
 			return false;
 		}
-		
+
 		$path = Storage::path($path);
-		
+
 		$filesystem = new Filesystem();
 		$originalName = $filesystem->name($path) . '.' . $filesystem->extension($path);
 		$mimeType = $filesystem->mimeType($path);
 		$error = null;
-		
+
 		return new UploadedFile($path, $originalName, $mimeType, $error, $test);
 	}
-	
+
 	/**
 	 * @param \Throwable $e
 	 * @return null
@@ -282,7 +283,7 @@ class Upload
 		} else {
 			abort(500, $e->getMessage());
 		}
-		
+
 		return null;
 	}
 }

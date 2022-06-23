@@ -1,7 +1,7 @@
 <?php
 
 return [
-	
+
 	/*
 	|--------------------------------------------------------------------------
 	| Default Filesystem Disk
@@ -12,9 +12,9 @@ return [
 	| based disks are available to your application. Just store away!
 	|
 	*/
-	
+
     'default' => env('FILESYSTEM_DISK', 'public'),
-	
+
 	/*
 	|--------------------------------------------------------------------------
 	| Default Cloud Filesystem Disk
@@ -25,9 +25,9 @@ return [
 	| will be bound as the Cloud disk implementation in the container.
 	|
 	*/
-	
+
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
-	
+
 	/*
 	|--------------------------------------------------------------------------
 	| Filesystem Disks
@@ -40,15 +40,15 @@ return [
 	| Supported Drivers: "local", "ftp", "sftp", "s3", "dropbox"
 	|
 	*/
-	
+
     'disks' => [
-		
+
 		'local' => [
 			'driver' => 'local',
 			'root'   => storage_path('app'),
 			'throw'  => true,
 		],
-		
+
 		'public' => [
 			'driver' 	 => 'local',
 			'root' 		 => storage_path('app/public'),
@@ -56,15 +56,15 @@ return [
 			'visibility' => 'public',
 			'throw'      => false,
 		],
-		
+
 		'private' => [
 			'driver' => 'local',
 			'root'   => storage_path('app/private'),
 			'throw'  => true,
 		],
-		
+
 		//---
-		
+
         // Used for Admin -> Log
         'storage' => [
             'driver' => 'local',
@@ -78,9 +78,9 @@ return [
             'root'   => storage_path('backups'), // that's where your backups are stored by default: storage/backups
 			'throw'  => true,
         ],
-		
+
 		//---
-		
+
 		'ftp' => [
 			'driver'   => 'ftp',
 			'host'     => env('FTP_HOST'),
@@ -93,7 +93,7 @@ return [
 			'timeout'  => env('FTP_TIMEOUT', 30),
 			'throw'    => env('FTP_THROW', false),
 		],
-		
+
 		'sftp' => [
 			'driver'          => 'sftp',
 			'host' 	          => env('SFTP_HOST'),
@@ -108,7 +108,7 @@ return [
 			'timeout'         => env('SFTP_TIMEOUT', 30),
 			'throw'           => env('SFTP_THROW', false),
 		],
-		
+
 		'minio' => [
 			'driver'   => 's3',
 			'key'      => env('MINIO_KEY'),
@@ -120,7 +120,7 @@ return [
 			'use_path_style_endpoint' => env('MINIO_USE_PATH_STYLE_ENDPOINT', true),
 			'throw'    => env('MINIO_THROW', false),
 		],
-		
+
 		's3' => [
 			'driver'   => 's3',
 			'key' 	   => env('AWS_ACCESS_KEY_ID'),
@@ -132,7 +132,7 @@ return [
 			'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
 			'throw'    => env('AWS_THROW', false),
 		],
-		
+
 		'digitalocean' => [
 			'driver'   => 's3',
 			'key'      => env('DIGITALOCEAN_KEY'),
@@ -146,16 +146,16 @@ return [
 			'cdn_endpoint' => env('DIGITALOCEAN_CDN_ENDPOINT'),
 			'throw'        => env('DIGITALOCEAN_THROW', false),
 		],
-		
+
 		'dropbox' => [
 			'driver'              => 'dropbox',
 			'root'                => env('DROPBOX_ROOT', '/'),
 			'authorization_token' => env('DROPBOX_AUTHORIZATION_TOKEN', ''),
 			'throw'               => env('DROPBOX_THROW', false),
 		],
-		
+
     ],
-	
+
 	/*
     |--------------------------------------------------------------------------
     | Symbolic Links
@@ -166,9 +166,9 @@ return [
     | the locations of the links and the values should be their targets.
     |
     */
-	
+
 	'links' => [
 		public_path('storage') => storage_path('app/public'),
 	],
-	
+
 ];

@@ -12,7 +12,7 @@ COPY --chown=www-data:www-data . /app
 
 RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/app public
 
-RUN chmod -R 777 storage public
+RUN chmod -R 777 storage public lang config
 
 # Expose Nginx
 RUN apt-get update -y && apt-get install -y nginx nano
@@ -62,6 +62,8 @@ RUN useradd -G www-data,root -u 1000 -d /home/devuser devuser
 RUN chmod -R 777 /app/storage
 RUN chmod -R 777 /app/public
 RUN chmod -R 777 /app/resources/lang
+RUN chmod -R 777 /app/lang
+RUN chmod -R 777 /app/config
 
 # Copy scripts and entrypoint
 #COPY .cicd/scripts/entrypoint /entrypoint
