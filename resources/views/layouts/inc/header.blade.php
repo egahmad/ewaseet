@@ -23,7 +23,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 <div class="header">
 	<nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">
 		<div class="container">
-			
+
 			<div class="navbar-identity p-sm-0">
 				{{-- Logo --}}
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
@@ -32,6 +32,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 						 data-bs-toggle="tooltip"
 						 title="{!! isset($logoLabel) ? $logoLabel : '' !!}"/>
 				</a>
+				@include('home.inc.search')
 				{{-- Toggle Nav (Mobile) --}}
 				<button class="navbar-toggler -toggler float-end"
 						type="button"
@@ -61,7 +62,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 					@endif
 				@endif
 			</div>
-			
+
 			<div class="navbar-collapse collapse" id="navbarsDefault">
 				<ul class="nav navbar-nav me-md-auto navbar-left">
 					{{-- Country Flag --}}
@@ -93,7 +94,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 						@endif
 					@endif
 				</ul>
-				
+
 				<ul class="nav navbar-nav ms-auto navbar-right">
 					@if (config('settings.list.display_browse_listings_link'))
 						<li class="nav-item d-lg-block d-md-none d-block">
@@ -188,11 +189,11 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 							</ul>
 						</li>
 					@endif
-					
+
 					@if (config('plugins.currencyexchange.installed'))
 						@include('currencyexchange::select-currency')
 					@endif
-					
+
 					@if (config('settings.single.pricing_page_enabled') == '2')
 						<li class="nav-item pricing">
 							<a href="{{ \App\Helpers\UrlGen::pricing() }}" class="nav-link">
@@ -200,7 +201,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 							</a>
 						</li>
 					@endif
-					
+
 					<?php
 						$addListingUrl = \App\Helpers\UrlGen::addPost();
 						$addListingAttr = '';
@@ -220,13 +221,13 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 							<i class="far fa-edit"></i> {{ t('Create Listing') }}
 						</a>
 					</li>
-					
+
 					@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.menu.select-language', 'layouts.inc.menu.select-language'])
-					
+
 				</ul>
 			</div>
-			
-			
+
+
 		</div>
 	</nav>
 </div>

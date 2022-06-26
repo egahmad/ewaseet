@@ -55,15 +55,15 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 }
 ?>
 @if (isset($sForm['enableFormAreaCustomization']) && $sForm['enableFormAreaCustomization'] == '1')
-	
+
 	@if (isset($firstSection) && !$firstSection)
 		<div class="p-0 mt-lg-4 mt-md-3 mt-3"></div>
 	@endif
-	
+
 	<?php $parallax = (isset($sForm['parallax']) && $sForm['parallax'] == '1') ? ' parallax' : ''; ?>
 	<div class="intro{{ $hideOnMobile }}{{ $parallax }}">
 		<div class="container text-center">
-			
+
 			@if ($sForm['hideTitles'] != '1')
 				<h1 class="intro-title animated fadeInDown">
 					{{ $sForm['title'] }}
@@ -72,11 +72,11 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 					{!! $sForm['subTitle'] !!}
 				</p>
 			@endif
-			
+
 			@if ($sForm['hideForm'] != '1')
 					<form id="search" name="search" action="{{ \App\Helpers\UrlGen::search() }}" method="GET">
 						<div class="row search-row animated fadeInUp">
-							
+
 							<div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 								<div class="search-col-inner">
 									<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
@@ -85,9 +85,9 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 									</div>
 								</div>
 							</div>
-							
+
 							<input type="hidden" id="lSearch" name="l" value="">
-							
+
 							<div class="col-md-5 col-sm-12 search-col relative locationicon mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 								<div class="search-col-inner">
 									<i class="fas fa-map-marker-alt icon-append"></i>
@@ -115,7 +115,7 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="col-md-2 col-sm-12 search-col">
 								<div class="search-btn-border bg-primary">
 									<button class="btn btn-primary btn-search btn-block btn-gradient">
@@ -123,24 +123,24 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 									</button>
 								</div>
 							</div>
-							
+
 						</div>
 					</form>
 			@endif
-			
+
 		</div>
 	</div>
-	
+
 @else
-	
+
 	@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'])
 	<div class="intro only-search-bar{{ $hideOnMobile }}">
 		<div class="container text-center">
-			
+
 			@if ($sForm['hideForm'] != '1')
 				<form id="search" name="search" action="{{ \App\Helpers\UrlGen::search() }}" method="GET">
 					<div class="row search-row animated fadeInUp">
-						
+
 						<div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 							<div class="search-col-inner">
 								<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
@@ -149,9 +149,9 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 								</div>
 							</div>
 						</div>
-						
+
 						<input type="hidden" id="lSearch" name="l" value="">
-						
+
 						<div class="col-md-5 col-sm-12 search-col relative locationicon mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 							<div class="search-col-inner">
 								<i class="fas fa-map-marker-alt icon-append"></i>
@@ -179,7 +179,7 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-md-2 col-sm-12 search-col">
 							<div class="search-btn-border bg-primary">
 								<button class="btn btn-primary btn-search btn-block btn-gradient">
@@ -187,12 +187,12 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 								</button>
 							</div>
 						</div>
-					
+
 					</div>
 				</form>
 			@endif
-		
+
 		</div>
 	</div>
-	
+
 @endif

@@ -20,7 +20,7 @@
 
 @section('content')
 	<div class="main-container">
-		
+
 		@if (session()->has('flash_notification'))
 			@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 			<?php $paddingTopExists = true; ?>
@@ -32,9 +32,9 @@
 				</div>
 			</div>
 		@endif
-		
+
 		@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.breadcrumbs', 'search.inc.breadcrumbs'])
-		
+
 		@if (config('settings.list.show_cats_in_top'))
 			@if (isset($cats) && $cats->count() > 0)
 				<div class="container mb-2 hide-xs">
@@ -45,7 +45,7 @@
 			@endif
 			@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.categories', 'search.inc.categories'])
 		@endif
-		
+
 		<?php if (isset($topAdvertising) && !empty($topAdvertising)): ?>
 			@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.advertising.top', 'layouts.inc.advertising.top'], ['paddingTopExists' => true])
 		<?php
@@ -56,7 +56,7 @@
 			}
 		endif;
 		?>
-		
+
 		<div class="container">
 			<div class="row">
 
@@ -128,7 +128,7 @@
 									@endif
 								@endif
 							</ul>
-							
+
 							<div class="tab-filter pb-2">
 								{{-- OrderBy Desktop --}}
 								<select id="orderBy" title="sort by" class="niceselecter select-sort-by small" data-style="btn-select" data-width="auto">
@@ -145,7 +145,7 @@
 							</div>
 
 						</div>
-						
+
 						<div class="listing-filter">
 							<div class="float-start col-md-9 col-sm-8 col-12">
 								<h1 class="h6 pb-0 breadcrumb-list">
@@ -153,7 +153,7 @@
 								</h1>
                                 <div style="clear:both;"></div>
 							</div>
-							
+
 							{{-- Display Modes --}}
 							@if (isset($posts) && $posts->count() > 0)
 								<?php $currDisplay = config('settings.list.display_mode'); ?>
@@ -173,10 +173,10 @@
 									@endif
 								</div>
 							@endif
-							
+
 							<div style="clear:both"></div>
 						</div>
-						
+
 						{{-- Mobile Filter Bar --}}
 						<div class="mobile-filter-bar col-xl-12">
 							<ul class="list-unstyled list-inline no-margin no-padding">
@@ -204,7 +204,7 @@
 						</div>
 						<div class="menu-overly-mask"></div>
 						{{-- Mobile Filter bar End--}}
-						
+
 						<div class="tab-content" id="myTabContent">
 							<div class="tab-pane fade show active" id="contentAll" role="tabpanel" aria-labelledby="tabAll">
 								<div id="postsList" class="category-list-wrapper posts-wrapper row no-margin">
@@ -218,7 +218,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="tab-box save-search-bar text-center">
 							@if (request()->filled('q') && request()->get('q') != '' && $count->get('all') > 0)
 								<a id="saveSearch"
@@ -232,20 +232,20 @@
 							@endif
 						</div>
 					</div>
-					
+
 					@if ($posts->hasPages())
 						<nav class="mt-3 mb-0 pagination-sm" aria-label="">
 							{!! $posts->appends(request()->query())->links() !!}
 						</nav>
 					@endif
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		{{-- Advertising --}}
 		@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.advertising.bottom', 'layouts.inc.advertising.bottom'])
-		
+
 		{{-- Promo Listing Button --}}
 		<div class="container mb-3">
 			<div class="card border-light text-dark bg-light mb-3">
@@ -260,7 +260,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		{{-- Category Description --}}
 		@if (isset($cat, $cat->description) && !empty($cat->description))
 			@if (!(bool)$cat->hide_description)
@@ -273,7 +273,7 @@
 				</div>
 			@endif
 		@endif
-		
+
 		{{-- Show Posts Tags --}}
 		@if (config('settings.list.show_listings_tags'))
 			@if (isset($tags) && !empty($tags))
@@ -293,7 +293,7 @@
 				</div>
 			@endif
 		@endif
-		
+
 	</div>
 @endsection
 
