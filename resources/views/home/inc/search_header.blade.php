@@ -61,37 +61,29 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 	@endif
 
 	<?php $parallax = (isset($sForm['parallax']) && $sForm['parallax'] == '1') ? ' parallax' : ''; ?>
-	<div class="intro{{ $hideOnMobile }}{{ $parallax }}">
-		<div class="container text-center">
 
-			@if ($sForm['hideTitles'] != '1')
-				<h1 class="intro-title animated fadeInDown">
-					{{ $sForm['title'] }}
-				</h1>
-				<p class="sub animateme fittext3 animated fadeIn">
-					{!! $sForm['subTitle'] !!}
-				</p>
-			@endif
+		<a class="container text-center">
+
 
 			@if ($sForm['hideForm'] != '1')
 					<form id="search" name="search" action="{{ \App\Helpers\UrlGen::search() }}" method="GET">
-						<div class="row search-row animated fadeInUp">
+						<div class="row search-row ">
 
-							<!-- <div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
+							<div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 								<div class="search-col-inner">
 									<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
-									 <div class="search-col-input">
+									<div class="search-col-input">
 										<input class="form-control has-icon" name="q" placeholder="{{ t('what') }}" type="text" value="">
 									</div>
 								</div>
 							</div>
 
-							 <input type="hidden" id="lSearch" name="l" value="">
+							<input type="hidden" id="lSearch" name="l" value="">
 
 							<div class="col-md-5 col-sm-12 search-col relative locationicon mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 								<div class="search-col-inner">
 									<i class="fas fa-map-marker-alt icon-append"></i>
-									 <div class="search-col-input">
+									<div class="search-col-input">
 										@if ($showMap)
 											<input class="form-control locinput input-rel searchtag-input has-icon"
 												   id="locSearch"
@@ -112,7 +104,7 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 												   value=""
 											>
 										@endif
-									</div> 
+									</div>
 								</div>
 							</div>
 
@@ -122,14 +114,14 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 										<i class="fas fa-search"></i> <strong>{{ t('find') }}</strong>
 									</button>
 								</div>
-							</div> --> 
+							</div>
 
 						</div>
 					</form>
 			@endif
 
-		</div>
-	</div>
+		
+</a>
 
 @else
 
@@ -141,21 +133,21 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 				<form id="search" name="search" action="{{ \App\Helpers\UrlGen::search() }}" method="GET">
 					<div class="row search-row animated fadeInUp">
 
-						<!-- <div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
+						<div class="col-md-5 col-sm-12 search-col relative mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 							<div class="search-col-inner">
 								<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
-								<!-- <div class="search-col-input">
+								<div class="search-col-input">
 									<input class="form-control has-icon" name="q" placeholder="{{ t('what') }}" type="text" value="">
-								</div> -->
+								</div>
 							</div>
-						</div> -->
+						</div>
 
-						<!-- <input type="hidden" id="lSearch" name="l" value="">
+						<input type="hidden" id="lSearch" name="l" value="">
 
 						<div class="col-md-5 col-sm-12 search-col relative locationicon mb-1 mb-xxl-0 mb-xl-0 mb-lg-0 mb-md-0">
 							<div class="search-col-inner">
 								<i class="fas fa-map-marker-alt icon-append"></i>
-								<!-- <div class="search-col-input">
+								<div class="search-col-input">
 									@if ($showMap)
 										<input class="form-control locinput input-rel searchtag-input has-icon"
 											   id="locSearch"
@@ -176,8 +168,8 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 											   value=""
 										>
 									@endif
-								</div> -->
-							<!-- </div>
+								</div>
+							</div>
 						</div>
 
 						<div class="col-md-2 col-sm-12 search-col">
@@ -186,7 +178,7 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 									<i class="fas fa-search"></i> <strong>{{ t('find') }}</strong>
 								</button>
 							</div>
-						</div> --> -->
+						</div>
 
 					</div>
 				</form>

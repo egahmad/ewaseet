@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.228.1",
+            "version": "3.228.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "53b7f43945b19bb0700c75d4c5f130055096e817"
+                "reference": "4dad57c95c7ff1dfcea29a7877ce64720b3318c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/53b7f43945b19bb0700c75d4c5f130055096e817",
-                "reference": "53b7f43945b19bb0700c75d4c5f130055096e817",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4dad57c95c7ff1dfcea29a7877ce64720b3318c3",
+                "reference": "4dad57c95c7ff1dfcea29a7877ce64720b3318c3",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^6.5.7 || ^7.4.4",
+                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
                 "guzzlehttp/promises": "^1.4.0",
                 "guzzlehttp/psr7": "^1.8.5 || ^2.3",
                 "mtdowling/jmespath.php": "^2.6",
@@ -143,9 +143,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.228.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.228.3"
             },
-            "time": "2022-06-22T18:16:48+00:00"
+            "time": "2022-06-24T20:24:09+00:00"
         },
         {
             "name": "brick/math",
@@ -6306,19 +6306,20 @@
         },
         {
             "name": "spatie/dropbox-api",
-            "version": "1.20.1",
+            "version": "1.20.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/dropbox-api.git",
-                "reference": "f7563632fa6e4970b895805169688be273fcbf19"
+                "reference": "9a515343b248aacebff0febd1cd657fda4f9eb2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/f7563632fa6e4970b895805169688be273fcbf19",
-                "reference": "f7563632fa6e4970b895805169688be273fcbf19",
+                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/9a515343b248aacebff0febd1cd657fda4f9eb2b",
+                "reference": "9a515343b248aacebff0febd1cd657fda4f9eb2b",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "graham-campbell/guzzle-factory": "^3.0|^4.0|^5.0",
                 "guzzlehttp/guzzle": "^6.2|^7.0",
                 "php": "^7.1|^8.0"
@@ -6364,7 +6365,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/dropbox-api/issues",
-                "source": "https://github.com/spatie/dropbox-api/tree/1.20.1"
+                "source": "https://github.com/spatie/dropbox-api/tree/1.20.2"
             },
             "funding": [
                 {
@@ -6376,7 +6377,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-29T06:41:44+00:00"
+            "time": "2022-06-24T05:57:19+00:00"
         },
         {
             "name": "spatie/flysystem-dropbox",
@@ -10426,16 +10427,16 @@
         },
         {
             "name": "knuckleswtf/scribe",
-            "version": "3.31.0",
+            "version": "3.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/knuckleswtf/scribe.git",
-                "reference": "b2052640cd815ce68471aefc3ac181145703a858"
+                "reference": "9e3d35d83d9558375c28dec6011a04c87fd13e56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/b2052640cd815ce68471aefc3ac181145703a858",
-                "reference": "b2052640cd815ce68471aefc3ac181145703a858",
+                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/9e3d35d83d9558375c28dec6011a04c87fd13e56",
+                "reference": "9e3d35d83d9558375c28dec6011a04c87fd13e56",
                 "shasum": ""
             },
             "require": {
@@ -10510,7 +10511,7 @@
             ],
             "support": {
                 "issues": "https://github.com/knuckleswtf/scribe/issues",
-                "source": "https://github.com/knuckleswtf/scribe/tree/3.31.0"
+                "source": "https://github.com/knuckleswtf/scribe/tree/3.32.0"
             },
             "funding": [
                 {
@@ -10518,7 +10519,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-06-16T10:55:14+00:00"
+            "time": "2022-06-23T19:11:08+00:00"
         },
         {
             "name": "laravel/sail",
@@ -13385,5 +13386,5 @@
         "ext-pdo": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

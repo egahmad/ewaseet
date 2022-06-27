@@ -63,10 +63,13 @@ body {
     border-color: #ff4034 !important;
     color: white !important;
     border-radius: 0;
-    padding: 10px 15px;
+    padding: 6px 15px;
 }
 .skin .btn-listing {
     background-image: linear-gradient(to bottom, #ff4034 0%, #ff4034 100%) !important;
+    color: white;
+    border-radius: 0;
+
 }
 .skin .btn-listing:hover
 {
@@ -81,16 +84,28 @@ body {
     border-color: #ff4034;
     background: linear-gradient(158deg, #ff4034 44%, #ff4034 85%);
 }
-.skin .btn-primary.btn-gradient:hover
+.skin .btn-primary
 {
-    background-color: #fc382e;
-    border-color: #fc382e;
+    background-color: #ff4034 !important;
+    border-color: #ff4034 !important;
+}
+.skin .btn-primary.btn-gradient:hover , .skin .btn-primary:hover
+{
+    background-color: #fc382e !important;
+    border-color: #fc382e !important;
+}
+.navbar.navbar-site ul.navbar-nav > li > a:hover
+{
+    color: #fc382e !important;
+}
+.skin .btn-check:focus+.btn-primary.btn-gradient, .skin .btn-primary.btn-gradient:focus, .skin .btn-primary.btn-gradient.focus {
+    box-shadow: 0 0 0 0px #eda2a9 !important;
 }
 
 .skin .search-row .search-col:first-child .search-col-inner, .skin .search-row .search-col .search-col-inner, .skin .search-row .search-col .search-btn-border {
     border: 1px solid #eaebf7;
 }
-#homepage .search-row .search-col .btn {
+#homepage .search-row .search-col .btn , #homepage .search-row .search-col .search-btn-border {
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
 }
@@ -99,7 +114,9 @@ body {
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
 }
-.skin .footer-nav li a:not(.btn):hover, .skin .footer-nav li a:not(.btn):focus {
+.skin .footer-nav li a:not(.btn):hover, .skin .footer-nav li a:not(.btn):focus,
+.skin .f-category a:hover i, .skin .f-category a:focus i 
+{
     color: #fc382e !important;
     opacity: 1;
 }
@@ -107,4 +124,26 @@ body {
 {
     font-size: 25px;
     display: block;
+}
+.search-row .search-col:first-child .search-col-inner , .search-row .search-col .search-btn-border {
+    border-radius: 0 0px 0px 0!important;
+}
+.skin a:not(.btn), .skin .nav-link, .skin .link-color ,
+.skin .f-category i
+{
+    color: #FF4035 !important;
+}
+.skin .btn-listing:hover, 
+.skin .btn-listing:focus, 
+.skin .btn-listing:active, 
+.skin .btn-listing:active:focus, 
+.skin .btn-listing.active, 
+.skin .btn-listing.active:focus, 
+.skin .show > .btn-listing.dropdown-toggle, .skin .open .dropdown-toggle.btn-listing
+{
+    color: white !important;
+}
+.btn-listing
+{
+    border: 0px solid #FF4035 !important;
 }

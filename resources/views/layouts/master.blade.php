@@ -50,14 +50,14 @@
 	@endif
 	@include('feed::links')
 	{!! seoSiteVerification() !!}
-	
+
 	@if (file_exists(public_path('manifest.json')))
 		<link rel="manifest" href="/manifest.json">
 	@endif
-	
+
 	@stack('before_styles_stack')
     @yield('before_styles')
-	
+
 	@if (config('lang.direction') == 'rtl')
 		<link href="https://fonts.googleapis.com/css?family=Cairo|Changa" rel="stylesheet">
 		<link href="{{ url(mix('css/app.rtl.css')) }}" rel="stylesheet">
@@ -67,7 +67,7 @@
 	@if (config('plugins.detectadsblocker.installed'))
 		<link href="{{ url('assets/detectadsblocker/css/style.css') . getPictureVersion() }}" rel="stylesheet">
 	@endif
-	
+
 	<?php
 	$skinQs = (request()->filled('skin')) ? '?skin=' . request()->input('skin') : null;
 	?>
@@ -78,23 +78,23 @@
 			echo $homeStyle;
 		}
 	?>
-	
+
 	<link href="{{ url()->asset('fonts/SFProARDisplay/stylesheet.css') . getPictureVersion() }}" rel="stylesheet">
-	
+
 	<link href="{{ url()->asset('css/custom.css') . getPictureVersion() }}" rel="stylesheet">
 	@stack('after_styles_stack')
     @yield('after_styles')
-	
+
 	@if (isset($plugins) and !empty($plugins))
 		@foreach($plugins as $plugin)
 			@yield($plugin . '_styles')
 		@endforeach
 	@endif
-    
+
     @if (config('settings.style.custom_css'))
 		{!! printCss(config('settings.style.custom_css')) . "\n" !!}
     @endif
-	
+
 	@if (config('settings.other.js_code'))
 		{!! printJs(config('settings.other.js_code')) . "\n" !!}
 	@endif
@@ -103,7 +103,7 @@
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
- 
+
 	<script>
 		paceOptions = {
 			elements: true
@@ -111,7 +111,7 @@
 	</script>
 	<script src="{{ url()->asset('assets/js/pace.min.js') }}"></script>
 	<script src="{{ url()->asset('assets/plugins/modernizr/modernizr-custom.js') }}"></script>
-	
+
 	@yield('captcha_head')
 	@section('recaptcha_head')
 		@if (
@@ -130,7 +130,7 @@
 					function myCustomValidation(token){
 						/* read HTTP status */
 						/* console.log(token); */
-						
+
 						if ($('#gRecaptchaResponse').length) {
 							$('#gRecaptchaResponse').val(token);
 						}
@@ -148,17 +148,17 @@
 </head>
 <body class="skin">
 <div id="wrapper">
-	
+
 	@section('header')
 		@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.header', 'layouts.inc.header'])
 	@show
-	
+
 	@section('search')
 	@show
-	
+
 	@section('wizard')
 	@show
-	
+
 	@if (isset($siteCountryInfo))
 		<div class="p-0 mt-lg-4 mt-md-3 mt-3"></div>
 		<div class="container">
@@ -172,18 +172,18 @@
 			</div>
 		</div>
 	@endif
-	
+
 	@yield('content')
-	
+
 	@section('info')
 	@show
-	
+
 	@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.advertising.auto', 'layouts.inc.advertising.auto'])
-	
+
 	@section('footer')
 		@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.footer', 'layouts.inc.footer'])
 	@show
-	
+
 </div>
 
 @section('modal_location')
@@ -209,7 +209,7 @@
 <script>
 	var countryCode = '{{ config('country.code', 0)  }}';
 	var timerNewMessagesChecking = {{ (int)config('settings.other.timer_new_messages_checking', 0)  }};
-	
+
 	/* Complete langLayout translations */
 	langLayout.hideMaxListItems = {
 		'moreText': "{{ t('View More') }}",
@@ -241,7 +241,7 @@
 			return "{!! t('Searching') !!}"
 		}
 	};
-	
+
 	var fakeLocationsResults = "{{ config('settings.list.fake_locations_results', 0) }}";
 	var stateOrRegionKeyword = "{{ t('area') }}";
 	var errorText = {
@@ -272,15 +272,15 @@
 		{{-- Simple Select Boxes --}}
 		let select2Params = largeDataSelect2Params;
 		select2Params.minimumResultsForSearch = Infinity;
-		
+
 		if (typeof langLayout !== 'undefined' && typeof langLayout.select2 !== 'undefined') {
 			select2Params.language = langLayout.select2;
 			largeDataSelect2Params.language = langLayout.select2;
 		}
-		
+
 		$('.selecter').select2(select2Params);
 		$('.large-data-selecter').select2(largeDataSelect2Params);
-		
+
 		{{-- Social Share --}}
 		$('.share').ShareLink({
 			title: '{{ addslashes(MetaTag::get('title')) }}',
@@ -289,7 +289,7 @@
 			width: 640,
 			height: 480
 		});
-		
+
 		{{-- Modal Login --}}
 		@if (isset($errors) && $errors->any())
 			@if ($errors->any() && old('quickLoginForm')=='1')
