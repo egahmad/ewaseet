@@ -62,8 +62,8 @@ $logoImgStyle = 'width:auto; height:40px; margin:0 5px 0 0;';
 $logoImg = '<img src="' . url('images/logo.png') . '" style="' . $logoImgStyle . '" class="img-responsive"/>';
 try {
 	if (is_link(public_path('storage'))) {
-		if (\Storage::disk('digitalocean')->exists(config('larapen.core.logo'))) {
-			$logoUrl = \Storage::disk('digitalocean')->url(config('larapen.core.logo'));
+		if (\Storage::disk('public')->exists(config('larapen.core.logo'))) {
+			$logoUrl = \Storage::disk('public')->url(config('larapen.core.logo'));
 			$logoImg = '<img src="' . $logoUrl . '" style="' . $logoImgStyle . '" class="img-responsive"/>';
 		}
 	}
