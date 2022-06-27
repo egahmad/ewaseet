@@ -111,3 +111,6 @@ body {
     font-size: 25px;
     display: block;
 }
+.search-row .search-col:first-child .search-col-inner , .search-row .search-col .search-btn-border {
+    border-radius: 0 0px 0px 0!important;
+}

@@ -32,7 +32,7 @@ if (isset($multiCountriesIsEnabled) && $multiCountriesIsEnabled) {
 						 data-bs-toggle="tooltip"
 						 title="{!! isset($logoLabel) ? $logoLabel : '' !!}"/>
 				</a>
-				@include('home.inc.search')
+				@include('home.inc.search_header')
 				{{-- Toggle Nav (Mobile) --}}
 				<button class="navbar-toggler -toggler float-end"
 						type="button"
