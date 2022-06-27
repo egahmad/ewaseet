@@ -10,8 +10,8 @@
 					$logoImg = '<img src="' . url('images/logo.png') . '" style="' . $logoImgStyle . '"/>';
 					try {
 						if (is_link(public_path('storage'))) {
-							if (\Storage::disk('digitalocean')->exists(config('larapen.core.logo'))) {
-								$logoImg = '<img src="' . \Storage::disk('digitalocean')->url(config('larapen.core.logo')) . '" style="' . $logoImgStyle . '"/>';
+							if (\Storage::disk('public')->exists(config('larapen.core.logo'))) {
+								$logoImg = '<img src="' . \Storage::disk('public')->url(config('larapen.core.logo')) . '" style="' . $logoImgStyle . '"/>';
 							}
 						}
 					} catch (\Throwable $e) {}
