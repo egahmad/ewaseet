@@ -145,7 +145,8 @@ return [
 			'folder'       => env('DIGITALOCEAN_FOLDER'),
 			'cdn_endpoint' => env('DIGITALOCEAN_CDN_ENDPOINT'),
 			'throw'        => env('DIGITALOCEAN_THROW', false),
-		],
+            'visibility' => 'public',
+        ],
 
 		'dropbox' => [
 			'driver'              => 'dropbox',
@@ -153,6 +154,30 @@ return [
 			'authorization_token' => env('DROPBOX_AUTHORIZATION_TOKEN', ''),
 			'throw'               => env('DROPBOX_THROW', false),
 		],
+        'do' => [
+            'driver' => 's3',
+            'key' => env('DO_SPACES_KEY'),
+            'secret' => env('DO_SPACES_SECRET'),
+            'region' => env('DO_SPACES_REGION'),
+            'bucket' => env('DO_SPACES_BUCKET'),
+            'endpoint' => env('DO_SPACES_ENDPOINT'),
+            'domain' => 'https://'.env('AWS_BUCKET').'.digitaloceanspaces.com',
+            'url'    => 'https://'.env('AWS_BUCKET').'.digitaloceanspaces.com',
+            'visibility' => 'public',
+        ]
+//        'do' => [
+//            'driver' => 's3',
+//            'key' => env('DO_SPACES_KEY'),
+//            'secret' => env('DO_SPACES_SECRET'),
+//            'region' => env('DO_SPACES_REGION'),
+//            'bucket' => env('DO_SPACES_BUCKET'),
+//            'endpoint' => env('DO_SPACES_ENDPOINT'),
+//            'domain' => 'https://'.env('AWS_BUCKET').'.digitaloceanspaces.com',
+//            'folder' => env('DO_FOLDER'),
+//            'cdn_endpoint' => env('DO_CDN_ENDPOINT'),
+//            'url' => env('DO_URL'),
+//            'use_path_style_endpoint' => env('DO_USE_PATH_STYLE_ENDPOINT', false),
+//        ],
 
     ],
 
