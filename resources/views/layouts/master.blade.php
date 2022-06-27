@@ -79,7 +79,7 @@
 		}
 	?>
 
-	<link href="{{ url()->asset('fonts/SFProARDisplay/stylesheet.css') . getPictureVersion() }}" rel="stylesheet">
+	<link href="{{ url()->asset('assets/fonts/SFProARDisplay/stylesheet.css') . getPictureVersion() }}" rel="stylesheet">
 
 	<link href="{{ url()->asset('css/custom.css') . getPictureVersion() }}" rel="stylesheet">
 	@stack('after_styles_stack')
