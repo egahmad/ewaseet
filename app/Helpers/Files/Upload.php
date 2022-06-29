@@ -258,7 +258,7 @@ class Upload
 			return false;
 		}
 
-		$path = Storage::path($path);
+		$path = Storage::url($path);
 
 		$filesystem = new Filesystem();
 		$originalName = $filesystem->name($path) . '.' . $filesystem->extension($path);
