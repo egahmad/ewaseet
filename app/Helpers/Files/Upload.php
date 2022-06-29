@@ -262,7 +262,7 @@ class Upload
 
 		$filesystem = new Filesystem();
 		$originalName = $filesystem->name($path) . '.' . $filesystem->extension($path);
-		$mimeType = $filesystem->mimeType($path);
+		$mimeType = Storage::mimeType($path);
 		$error = null;
 
 		return new UploadedFile($path, $originalName, $mimeType, $error, $test);
