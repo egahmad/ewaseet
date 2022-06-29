@@ -15,12 +15,13 @@
 /* Your custom CSS here... */
 
 *{
-    font-family: Cairo,sans-serif !important;
+    font-family: Cairo,sans-serif ;
+    
 }
 
 body {
     background-color: whitesmoke;
-    font-family: Cairo,sans-serif !important;
+    font-family: Cairo,sans-serif ;
 }
 
 .intro {
@@ -51,7 +52,7 @@ body {
     background: #202125;
 }
 .navbar.navbar-site {
-    background-color: white !important;
+    background-color: #202125 !important;
 }
 .navbar.navbar-site ul.navbar-nav>li.postadd.nav-item {
    
@@ -59,51 +60,53 @@ body {
 }
 .navbar.navbar-site ul.navbar-nav>li.postadd.nav-item a
 {
-    background-color: #ff4034 !important;
-    border-color: #ff4034 !important;
+    background-color: #eb3832 !important;
+    border-color: #eb3832 !important;
     color: white !important;
     border-radius: 0;
     padding: 6px 15px;
+    font-family: Cairo,sans-serif ;
 }
 .skin .btn-listing {
-    background-image: linear-gradient(to bottom, #ff4034 0%, #ff4034 100%) !important;
+    background-image: linear-gradient(to bottom, #eb3832 0%, #eb3832 100%) !important;
     color: white;
     border-radius: 0;
+    font-family: Cairo,sans-serif;
 
 }
 .skin .btn-listing:hover
 {
-    background-image: linear-gradient(to bottom, #fc382e 0%, #fc382e 100%) !important;
+    background-image: linear-gradient(to bottom, #ed4c47 0%, #ed4c47 100%) !important;
 }
 .skin .bg-primary {
-    background-color: #ff4034 !important;
+    background-color: #eb3832 !important;
 }
 .skin .btn-primary.btn-gradient
 {
-    background-color: #ff4034;
-    border-color: #ff4034;
-    background: linear-gradient(158deg, #ff4034 44%, #ff4034 85%);
+    background-color: #eb3832;
+    border-color: #eb3832;
+    background: linear-gradient(158deg, #eb3832 44%, #eb3832 85%);
 }
 .skin .btn-primary
 {
-    background-color: #ff4034 !important;
-    border-color: #ff4034 !important;
+    background-color: #eb3832 !important;
+    border-color: #eb3832 !important;
 }
 .skin .btn-primary.btn-gradient:hover , .skin .btn-primary:hover
 {
-    background-color: #fc382e !important;
-    border-color: #fc382e !important;
+    background-color: #ed4c47 !important;
+    border-color: #ed4c47 !important;
 }
 .navbar.navbar-site ul.navbar-nav > li > a:hover
 {
-    color: #fc382e !important;
+    color: #ed4c47 !important;
 }
 .skin .btn-check:focus+.btn-primary.btn-gradient, .skin .btn-primary.btn-gradient:focus, .skin .btn-primary.btn-gradient.focus {
     box-shadow: 0 0 0 0px #eda2a9 !important;
 }
 
 .skin .search-row .search-col:first-child .search-col-inner, .skin .search-row .search-col .search-col-inner, .skin .search-row .search-col .search-btn-border {
-    border: 1px solid #eaebf7;
+    border: 0px solid #eaebf7;
 }
 #homepage .search-row .search-col .btn , #homepage .search-row .search-col .search-btn-border {
     border-top-left-radius: 0px !important;
@@ -117,21 +120,28 @@ body {
 .skin .footer-nav li a:not(.btn):hover, .skin .footer-nav li a:not(.btn):focus,
 .skin .f-category a:hover i, .skin .f-category a:focus i 
 {
-    color: #fc382e !important;
+    color: #ed4c47 !important;
     opacity: 1;
+}
+.skin h1, .skin h2, .skin h3, .skin h4, .skin h5, .skin h6 {
+    color: #eb3832 !important;
+    font-family: Cairo,sans-serif;
 }
 .box-title h2
 {
     font-size: 25px;
     display: block;
 }
-.search-row .search-col:first-child .search-col-inner , .search-row .search-col .search-btn-border {
+.search-row .search-col:first-child .search-col-inner , .search-row .search-col .search-btn-border ,
+.search-row .search-col:first-child .form-control
+{
     border-radius: 0 0px 0px 0!important;
 }
 .skin a:not(.btn), .skin .nav-link, .skin .link-color ,
-.skin .f-category i
+.skin .f-category i , .skin h1, .skin h2, .skin h3 , .skin h5
 {
-    color: #FF4035 !important;
+    color: #eb3832 !important;
+
 }
 .skin .btn-listing:hover, 
 .skin .btn-listing:focus, 
@@ -145,5 +155,55 @@ body {
 }
 .btn-listing
 {
-    border: 0px solid #FF4035 !important;
+    border: 0px solid #eb3832 !important;
+    box-shadow: 0 #aaa !important;
+   
+}
+.skin .btn-listing 
+{
+    box-shadow: 0 #aaa !important;
+}
+.search-row .search-col .form-control, .search-row .select2-container--default .select2-selection--single, .search-row button.btn-search {
+    font-size: .86rem !important;
+}
+.search-row .search-col .form-control, .search-row button.btn-search {
+    height: 40px !important;
+}
+.intro p
+{
+    color: black !important;
+    font-weight: bold;
+}
+.navbar-left .intro
+{
+    background-image: black;
+}
+.f-category h6, .skin h5 , .page-info-lite .iconbox-wrap-text , 
+.location-content .title-3 , .box-title h2 span , .footer-title
+{
+    font-family: Cairo,sans-serif;
+    
+}
+.page-info-lite h5 {
+    color: #999999 !important;
+}
+.footer-nav-inline.social-list-color li a
+{
+    color: white !important;
+}
+
+.skin a:not(.btn), .skin .nav-link, .skin .link-color  {
+    color: #c53e4b !important;
+}
+.f-category h6 {
+    color: #333 !important;
+}
+.search-row .icon-append {
+    font-size: 22px !important;
+}
+@media (max-width: 767px)
+{
+.search-row .search-col .btn, .search-row .search-col .form-control, .search-row .search-col .search-btn-border, .search-row .search-col .search-col-inner, .search-row .search-col:first-child .form-control, .search-row .search-col:first-child .search-col-inner {
+    border-radius: 0 !important;
+}
 }
