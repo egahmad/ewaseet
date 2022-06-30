@@ -265,6 +265,10 @@ class Upload
 		$mimeType = Storage::mimeType($path);
 		$error = null;
 
+        $s3FileContents =  Storage::get($path);
+        Storage::disk('public')->put($path, $s3FileContents);
+        $path = Storage::disk('public')->path($path);
+        
 		return new UploadedFile($path, $originalName, $mimeType, $error, $test);
 	}
 
