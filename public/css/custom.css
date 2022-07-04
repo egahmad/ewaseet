@@ -226,6 +226,7 @@ body {
      padding: 16px;
      font-size: 14px;
      border: none;
+     font-family: Cairo,sans-serif;
    }
    
    .dropdown {
