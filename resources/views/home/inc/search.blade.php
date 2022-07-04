@@ -128,6 +128,8 @@ if (isset($searchFormOptions, $searchFormOptions['hide_on_mobile']) && $searchFo
 					</form>
 			@endif
 
+			@includeFirst([config('larapen.core.customizedViewPath') .'home.inc.locations-in-intro', 'home.inc.locations-in-intro']);
+
 		</div>
 	</div>
 

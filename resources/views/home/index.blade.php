@@ -19,7 +19,6 @@
 
 @section('content')
 	<div class="main-container" id="homepage">
-
 		@if (session()->has('flash_notification'))
 			@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 			<?php $paddingTopExists = true; ?>
@@ -34,7 +33,7 @@
 
 		@if (isset($sections) and $sections->count() > 0)
 			@foreach($sections as $section)
-				@if (view()->exists($section->view))
+				@if (view()->exists($section->view) && $section->method != 'getLocations')
 					@includeFirst([config('larapen.core.customizedViewPath') . $section->view, $section->view], ['firstSection' => $loop->first])
 				@endif
 			@endforeach
