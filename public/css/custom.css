@@ -278,9 +278,9 @@ body {
        transition: height .3s ease-out;
    }
 
-   .items-details span
+   /* .items-details span
    {
     display: block !important;
-   }
+   } */
 
   
