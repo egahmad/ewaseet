@@ -278,7 +278,7 @@ body {
        transition: height .3s ease-out;
    }
 
-   .items-details .info-row .date, .items-details  .info-row  .category, .items-details .info-row  .item-location
+   .items-details span
    {
     display: block !important;
    }
