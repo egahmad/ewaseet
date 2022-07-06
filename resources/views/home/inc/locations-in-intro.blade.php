@@ -2,7 +2,7 @@
 // Default Map's values
 $loc = [
 	'show'       		=> false,
-	'itemsCols'  		=> 3,
+	'itemsCols'  		=> 5,
 	'showButton' 		=> false,
 	'countCitiesPosts' 	=> false,
 ];
@@ -54,18 +54,18 @@ if (isset($citiesOptions, $citiesOptions['hide_on_mobile']) and $citiesOptions['
 				<?php
 				$leftClassCol = '';
 				$rightClassCol = '';
-				$ulCol = 'col-md-3 col-sm-12'; // Cities Columns
+				$ulCol = 'col-md-2 col-sm-12'; // Cities Columns
 				
 				if ($loc['show'] && $map['show']) {
 					// Display the Cities & the Map
 					$leftClassCol = 'col-lg-12 col-md-12';
 					$rightClassCol = 'col-lg-3 col-md-12 mt-3 mt-xl-0 mt-lg-0';
-					$ulCol = 'col-md-4 col-sm-6 col-12';
+					$ulCol = 'col-md-2 col-sm-6 col-12';
 					
 					if ($loc['itemsCols'] == 2) {
 						$leftClassCol = 'col-md-6 col-sm-12';
 						$rightClassCol = 'col-md-5 col-sm-12';
-						$ulCol = 'col-md-6 col-sm-12';
+						$ulCol = 'col-md-2 col-sm-12';
 					}
 					if ($loc['itemsCols'] == 1) {
 						$leftClassCol = 'col-md-3 col-sm-12';
@@ -95,6 +95,7 @@ if (isset($citiesOptions, $citiesOptions['hide_on_mobile']) and $citiesOptions['
 							@endif
 							<div class="col-xl-12 tab-inner">
 								<div class="row">
+									{{count($cities)}}
 									@foreach ($cities as $key => $items)
 										<ul class="cat-list {{ $ulCol }} mb-0 mb-xl-2 mb-lg-2 mb-md-2 {{ ($cities->count() == $key+1) ? 'cat-list-border' : '' }}">
 											@foreach ($items as $k => $city)
