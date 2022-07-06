@@ -36,7 +36,7 @@ class HomeSectionSeeder extends Seeder
 				'field'     => null,
 				'parent_id' => null,
 				'lft'       => '2',
-				'rgt'       => '3',
+				'rgt'       => '5',
 				'depth'     => '1',
 				'active'    => '1',
 			],

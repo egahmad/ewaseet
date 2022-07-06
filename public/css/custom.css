@@ -25,7 +25,7 @@ body {
 }
 
 .intro {
-    background-image: url("/images/store.svg");
+    background-image: url("/images/store.jpg");
     -webkit-background-size:cover;
     -moz-background-size:cover ;
     -o-background-size:cover ;
@@ -223,7 +223,7 @@ body {
 .dropbtn {
     background-color: transparent;
      color:#2b2d2e;
-     padding: 16px;
+     padding: 16px 22px;
      font-size: 14px;
      border: none;
      font-family: Cairo,sans-serif;
@@ -245,10 +245,10 @@ body {
    
    .dropdown-content a {
      color: #2b2d2e !important;
-     padding: 12px 16px;
+     padding: 12px 10px;
      text-decoration: none;
      display: block;
-       font-size: 14px;
+       font-size: 12px;
    }
        .dropdown-content a:hover
        {
@@ -276,6 +276,11 @@ body {
        right: 0;
        background-color: #000;
        transition: height .3s ease-out;
+   }
+
+   .items-details .date ,  .items-details .category ,  .items-details .item-location
+   {
+    display: block !important;
    }
 
   

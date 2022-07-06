@@ -156,7 +156,7 @@ class HomeController extends FrontController
 		$numberOfCols = 4;
 		if (file_exists(config('larapen.core.maps.path') . strtolower(config('country.code')) . '.svg')) {
 			if (isset($value['show_map']) && $value['show_map'] == '1') {
-				$numberOfCols = (isset($value['items_cols']) && !empty($value['items_cols'])) ? (int)$value['items_cols'] : 3;
+				$numberOfCols = (isset($value['items_cols']) && !empty($value['items_cols'])) ? (int)$value['items_cols'] : 5;
 			}
 		}
 		

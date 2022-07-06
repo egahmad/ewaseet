@@ -156,64 +156,99 @@
 <div class="container ">
 	
     <div class="dropdown">
-  <button class="dropbtn">موضة</button>
+  <button class="dropbtn">السيارات
+</button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="#">السيارات</a>
+    <a href="#"> الحافلات والحافلات الصغيرة</a>
+    <a href="#">معدات ثقيلة</a>
+	<a href="#">دراجات نارية وسكوترات </a>
+	<a href="#">الشاحنات والمقطورات </a>
+	<a href="{{ config('routes.sitemap')}}"> المزيد </a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">العقارات
+</button>
+  <div class="dropdown-content">
+    <a href="#">منازل وشقق للايجار</a>
+    <a href="#">منازل وشقق للبيع</a>
+    <a href="#">أراضي وقطع أراضي للإيجار</a>
+	<a href="{{ config('routes.sitemap')}}"> المزيد </a>
   </div>
 </div>
 <div class="dropdown">
   <button class="dropbtn">موضة</button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="#">حقائب</a>
+    <a href="#">ملابس</a>
+    <a href="#">اكسسوارات الملابس</a>
+	<a href="{{ config('routes.sitemap')}}"> المزيد </a>
   </div>
 </div>
 <div class="dropdown">
-  <button class="dropbtn">موضة</button>
+  <button class="dropbtn">الأثاث والأجهزة
+</button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="#">أثاث - أدوات مائدة</a>
+    <a href="#">تحف - فن - ديكور</a>
+    <a href="#">الأجهزة</a>
+	<a href="{{ config('routes.sitemap')}}"> المزيد </a>
   </div>
 </div>
-<div class="dropdown">
-  <button class="dropbtn">موضة</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn">موضة</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn">موضة</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn">موضة</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-  
 
-				</div>
+<div class="dropdown">
+  <button class="dropbtn"> الأحداث
+ 
+</button>
+  <div class="dropdown-content">
+    <a href="#">حفلات ومهرجانات</a>
+    <a href="#"> شبكات ولقاءات</a>
+    <a href="#">الرياضة والهواء الطلق</a>
+	<a href="{{ config('routes.sitemap')}}"> المزيد </a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn"> إلكترونيات
+</button>
+  <div class="dropdown-content">
+    <a href="#"> أجهزة الكمبيوتر - واللاب توب</a>
+    <a href="#"> كاميرات الصور والفيديو</a>
+    <a href="#">ألعاب الفيديو
+</a>
+<a href="{{ config('routes.sitemap')}}"> المزيد </a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">  الأثاث والأجهزة
+</button>
+  <div class="dropdown-content">
+    <a href="#"> أثاث - أدوات مائدة</a>
+    <a href="#"> تحف - فن - ديكور</a>
+    <a href="#">الأجهزة
+</a>
+<a href="{{ config('routes.sitemap')}}"> المزيد </a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">   الجمال والرفاهية
+
+</button>
+  <div class="dropdown-content">
+    <a href="#"> منتجات العنايه بالجسم </a>
+    <a href="#"> العطر </a>
+    <a href="#">جمال الشعر
+</a>
+<a href="{{ config('routes.sitemap')}}"> المزيد </a>
+  </div>
+</div>
+
+
+
+</div>
 
 
 	@section('search')
