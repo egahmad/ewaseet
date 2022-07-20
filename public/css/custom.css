@@ -37,7 +37,7 @@ body {
 }
 
 .inner-box {
-    background: rgba(33,34,35,.6) ;
+    background: #ddd!important ;
     border-color: transparent;
 }
 .section-promo {
