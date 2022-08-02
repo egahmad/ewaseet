@@ -35,9 +35,11 @@ body {
     background-size: 100% 100%;
    
 }
-
+ .inner-box-home  {
+    background: rgba(33,34,35,.6)!important ;
+   }
 .inner-box {
-    background: #ddd!important ;
+    background: #ddd ;
     border-color: transparent;
 }
 .section-promo {
@@ -277,6 +279,7 @@ body {
        background-color: #000;
        transition: height .3s ease-out;
    }
+   
 
    /* .items-details span
    {
