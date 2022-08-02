@@ -39,7 +39,7 @@ if (isset($citiesOptions, $citiesOptions['hide_on_mobile']) and $citiesOptions['
 @includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'], ['hideOnMobile' => $hideOnMobile])
 <div class="container{{ $hideOnMobile }}">
 	<div class="col-xl-12 page-content p-0">
-		<div class="inner-box">
+		<div class="inner-box inner-box-home">
 			
 			<div class="row">
 				@if (!$map['show'])
