@@ -95,7 +95,7 @@ if (isset($citiesOptions, $citiesOptions['hide_on_mobile']) and $citiesOptions['
 							@endif
 							<div class="col-xl-12 tab-inner">
 								<div class="row">
-									{{count($cities)}}
+									
 									@foreach ($cities as $key => $items)
 										<ul class="cat-list {{ $ulCol }} mb-0 mb-xl-2 mb-lg-2 mb-md-2 {{ ($cities->count() == $key+1) ? 'cat-list-border' : '' }}">
 											@foreach ($items as $k => $city)
